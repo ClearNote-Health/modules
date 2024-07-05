@@ -115,6 +115,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Echo base
+        run: echo '${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}'
+
       - name: List nf-test files
         id: list
         uses: adamrtalbot/detect-nf-test-changes@6e67b7a6bd3caf8571b99cab3ab764c0e758f55c # v0.0.3
